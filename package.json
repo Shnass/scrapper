@@ -6,13 +6,19 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/app.js",
     "testapp": "node src/greeting.js",
-    "scrap": "node --env-file=.env src/scrap.js"
+    "scrap": "node --env-file=.env src/scrap.js",
+    "client": "node src/client.js",
+    "dev": "concurrently \"npm run scrap\" \"npm run client\" "
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "express": "^5.1.0",
-    "fast-xml-parser": "^5.3.0"
+    "fast-xml-parser": "^5.3.0",
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
   }
 }
